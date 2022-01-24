@@ -5,7 +5,10 @@ This repository is a python script that connects to the city of Austin's public,
 
 ![chart](chart.png)
 
-The original intent for this project was to build this as an AWS Lambda script to be run in the cloud as an automated process and have the chart saved in an AWS S3 bucket to be statically hosted, however, the libraries I used made the script file too large to be held or used with Lamba. I might see if I can pare the dependecies down to make it fit under Lambda's 50MB threshold, but for now I am going to run this script locally on a weekly basis to update the chart in my S3 bucket and work on getting that chart set up to be public facing. 
+The original intent for this project was to build this as an AWS Lambda script to be run in the cloud as an automated process and have the chart saved in an AWS S3 bucket to be statically hosted, however, the libraries I used made the script file too large to be held or used with Lambas. So, for now I am running this script locally, on a weekly basis to generate an updated chart, and then uploading the updated chart to an AWS S3 storage bucket for static hosting. The result is still not ideal, but it gets the tracking started and it can be viewed [here](https://hellositeworld.s3.us-east-2.amazonaws.com/index.html).
+
+Ideally my final product would be an entirely cloud-based set of scripts that automatically run on a scheduled basis and update this chart (and potentially others as well) to serve as a new housing supply gap dashboard. 
+
 
 requirements for this code:
 - pandas
